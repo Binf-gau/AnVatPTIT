@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/main/java/AnVatPTIT/Controller/Admin/CategoryController_Admin.java=UTF-8
+encoding//src/main/java/AnVatPTIT/Controller/Admin/OrderDetailsController_Admin.java=UTF-8
+encoding//src/main/java/AnVatPTIT/Controller/Admin/ProductsController_Admin.java=UTF-8
+encoding//src/main/java/AnVatPTIT/Controller/User/UserController.java=UTF-8
+encoding//src/main/java/AnVatPTIT/Dao/CartDao.java=UTF-8
+encoding//src/main/java/AnVatPTIT/Dao/ProductsDao.java=UTF-8
+encoding//src/main/java/AnVatPTIT/Dao/SlidesDao.java=UTF-8
