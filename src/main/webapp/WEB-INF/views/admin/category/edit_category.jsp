@@ -8,6 +8,12 @@
                 <li class="breadcrumb-item"><i class="fa fa-angle-right"></i><a href='<c:url value="/admin"/>'>Trang chủ</a> <i class="fa fa-angle-right"></i>Sửa loại sản phẩm</li>
             </ol>
             
+            <c:if test="${ not empty messageResponse}">
+			    <ol class="breadcrumb">
+                	<li class="breadcrumb-item compose w3layouts"> <h2>${messageResponse}</h2> </li>
+            	</ol>
+            </c:if>
+            
             <div class="grid-form1">
                 <div class="tab-content">
                     <div class="tab-pane active" id="horizontal-form">

@@ -43,8 +43,7 @@
 			<div class="row-fluid">
 				<ul class="thumbnails">
 
-					<c:forEach var="item" items="${ productsPaginate }"
-						varStatus="loop">
+					<c:forEach var="item" items="${ productsPaginate }" varStatus="loop">
 						<li class="span4">
 							<div class="thumbnail">
 								<a href="product_details.html" class="overlay"></a> <a
@@ -70,17 +69,16 @@
 							</div>
 						</li>
 
-						<c:if
-							test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1)  == productsPaginate.size() }">
+						<c:if test="${ (loop.index + 1) % 3 == 0 || (loop.index + 1)  == productsPaginate.size() }">
 				</ul>
 			</div>
 			<c:if test="${ (loop.index + 1) < productsPaginate.size() }">
 				<div class="row-fluid">
 					<ul class="thumbnails">
 			</c:if>
-		</c:if>
-
-		</c:forEach>
+					</c:if>
+				
+				</c:forEach>
 
 		</c:if>
 

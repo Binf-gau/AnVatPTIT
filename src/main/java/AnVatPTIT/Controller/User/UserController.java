@@ -20,6 +20,7 @@ public class UserController extends BaseController {
 
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.GET)
 	public ModelAndView Register() {
+		_mvShare.addObject("messageResponse", "");
 		_mvShare.setViewName("user/account/register");
 		_mvShare.addObject("user", new Users());
 		return _mvShare;
@@ -29,22 +30,25 @@ public class UserController extends BaseController {
 	public ModelAndView CreateAccount(@ModelAttribute("user") Users user) {
 		int count = accountService.AddAccount(user);
 		if (count > 0) {
-			_mvShare.addObject("status", "Đăng ký tài khoản thành công");
+			_mvShare.addObject("messageResponse", "Đăng ký tài khoản thành công");
+			_mvShare.addObject("alert", "seccess");
 		} else {
-			_mvShare.addObject("status", "Đăng ký tài khoản không thành công");
+			_mvShare.addObject("messageResponse", "Đăng ký tài khoản không thành công");
+			_mvShare.addObject("alert", "danger");
 		}
 		_mvShare.setViewName("user/account/register");
 		return _mvShare;
 	}
 	
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
-	public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users user) {
+	public ModelAndView Login(HttpServletRequest request, HttpSession session, @ModelAttribute("user") Users user) {
 		user = accountService.CheckAccount(user);
 		if (user != null) {
-			_mvShare.setViewName("redirect:trang-chu");
+			_mvShare.setViewName("redirect:/");
 			session.setAttribute("LoginInfo", user);
 		} else {
-			_mvShare.addObject("statusLogin", "Đăng nhập không thành công");
+			_mvShare.addObject("messageResponse", "Đăng nhập không thành công");
+			_mvShare.addObject("alert", "danger");
 		}
 		return _mvShare;
 	}

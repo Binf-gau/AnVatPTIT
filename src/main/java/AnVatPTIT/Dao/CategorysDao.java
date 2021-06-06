@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import AnVatPTIT.Dto.ProductsDto;
 import AnVatPTIT.Entity.Categorys;
 import AnVatPTIT.Entity.MapperCategorys;
 
@@ -77,6 +76,13 @@ public class CategorysDao extends BaseDao {
 		sql.append(")");
 
 		int insert = _jdbcTemplate.update(sql.toString());
+		return insert;
+	}
+
+	public int TotalCategorys() {
+		StringBuffer sql = new StringBuffer();
+		sql.append("SELECT COUNT(*) FROM categorys");
+		int insert = _jdbcTemplate.queryForObject(sql.toString(), new Object[] {}, Integer.class);
 		return insert;
 	}
 }

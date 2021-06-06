@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import AnVatPTIT.Dto.ProductsDto;
 import AnVatPTIT.Dto.ProductsDtoMapper;
-import AnVatPTIT.Entity.Users;
 
 @Repository
 public class ProductsDao extends BaseDao {
@@ -208,6 +207,13 @@ public class ProductsDao extends BaseDao {
 		sql.append("WHERE id_product = " + product.getId_product());
 		
 		int insert = _jdbcTemplate.update(sql.toString());
+		return insert;
+	}
+
+	public int TotalProducts() {
+		StringBuffer sql = new StringBuffer();
+		sql.append("SELECT COUNT(*) FROM products");
+		int insert = _jdbcTemplate.queryForObject(sql.toString(), new Object[] {}, Integer.class);
 		return insert;
 	}
 	

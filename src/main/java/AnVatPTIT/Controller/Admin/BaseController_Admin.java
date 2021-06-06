@@ -16,7 +16,6 @@ public class BaseController_Admin {
 
 	@PostConstruct
 	public ModelAndView Init() {
-		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		return _mvShare;
 	}
 }

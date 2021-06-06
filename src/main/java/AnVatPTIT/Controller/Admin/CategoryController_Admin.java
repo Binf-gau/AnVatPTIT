@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import AnVatPTIT.Dto.ProductsDto;
 import AnVatPTIT.Entity.Categorys;
 import AnVatPTIT.Service.Admin.CategoryServiceImpl_Admin;
 import AnVatPTIT.Service.Admin.ICategoryService_Admin;
@@ -23,6 +22,8 @@ public class CategoryController_Admin extends BaseController_Admin {
 	
 	@RequestMapping(value = "admin/loai-san-pham")
 	public ModelAndView LoaiSanPham() {
+		_mvShare.addObject("messageResponse", "");
+		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		_mvShare.setViewName("admin/category/category");
 		return _mvShare;
 	}
@@ -36,6 +37,7 @@ public class CategoryController_Admin extends BaseController_Admin {
 	
 	@RequestMapping(value = "admin/them-loai-san-pham", method = RequestMethod.GET)
 	public ModelAndView ThemLoaiSanPham() {
+		_mvShare.addObject("messageResponse", "");
 		_mvShare.addObject("category", new Categorys());
 		_mvShare.setViewName("admin/category/add_category");
 		return _mvShare;
@@ -45,9 +47,9 @@ public class CategoryController_Admin extends BaseController_Admin {
 	public ModelAndView CreateCategorys(@ModelAttribute("category") Categorys category) {
 		int count = categoryService.AddCategory(category);
 		if (count > 0) {
-			_mvShare.addObject("status", "Thêm thành công");
+			_mvShare.addObject("messageResponse", "Thêm loại sản phẩm thành công");
 		} else {
-			_mvShare.addObject("status", "Thêm không thành công");
+			_mvShare.addObject("messageResponse", "Thêm loại sản phẩm không thành công");
 		}
 		_mvShare.setViewName("admin/category/add_category");
 		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
@@ -70,9 +72,9 @@ public class CategoryController_Admin extends BaseController_Admin {
 		category.setId(categoryOld.getId());
 		int count = categoryService.EditCategory(category);
 		if (count > 0) {
-			System.out.println("Sửa thành công");
+			_mvShare.addObject("messageResponse", "Sửa loại sản phẩm thành công");
 		} else {
-			System.out.println("Sửa không thành công");
+			_mvShare.addObject("messageResponse", "Sửa loại sản phẩm không thành công");
 		}
 		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		return "redirect:"+request.getHeader("Referer");

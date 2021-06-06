@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp" %>
-<title>Dash Board</title>
+<title>Trang quản trị</title>
 <body>
     <!--/content-inner-->
             <ol class="breadcrumb">
@@ -16,8 +16,7 @@
                         </div>
                         <div class="four-text">
                             <h3>Người dùng</h3>
-                            <h4> 12 </h4>
-
+                            <h4> ${ totalUsers } </h4>
                         </div>
 
                     </div>
@@ -29,7 +28,7 @@
                         </div>
                         <div class="four-text">
                             <h3>Đơn hàng</h3>
-                            <h4>210</h4>
+                            <h4>${ totalBills }</h4>
 
                         </div>
 
@@ -42,7 +41,7 @@
                         </div>
                         <div class="four-text">
                             <h3>Sản phẩm</h3>
-                            <h4>12</h4>
+                            <h4>${ totalProducts }</h4>
 
                         </div>
 
@@ -55,7 +54,7 @@
                         </div>
                         <div class="four-text">
                             <h3>Loại sản phẩm</h3>
-                            <h4>5</h4>
+                            <h4>${ totalCategorys }</h4>
 
                         </div>
 
@@ -112,11 +111,11 @@ Export <i class="fa fa-angle-down"></i>
 
                             <div class="row m-0 md-bg-grey-100 p-l-20 p-r-20">
                                 <div class="col-md-6 col-sm-6 col-xs-6 w3layouts-aug">
-                                    <h3>August 2016</h3>
-                                    <p>REPORT</p>
+                                    <h3>Tháng 6  2021</h3>
+                                    <p>BÁO CÁO</p>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 ">
-                                    <h2 class="text-right c-teal f-300 m-t-20">$21,235</h2>
+                                    <h2 class="text-right c-teal f-300 m-t-20"><fmt:formatNumber type="number" groupingUsed="true" value="${ totalRevenueOfMonth }" />₫</h2>
                                 </div>
                             </div>
 
@@ -124,255 +123,89 @@ Export <i class="fa fa-angle-down"></i>
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Amount</th>
+                                            <th>Id Hóa đơn</th>
+                                            <th>Khách hàng</th>
+                                            <th>Tổng tiền</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>2356</td>
-                                            <td>dummy text </td>
-                                            <td>6,200.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4589</td>
-                                            <td>Lorem Ipsum</td>
-                                            <td>6,500.00</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>3269</td>
-                                            <td>specimen book</td>
-                                            <td>6,800.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5126</td>
-                                            <td>Letraset sheets</td>
-                                            <td>7,200.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7425</td>
-                                            <td>PageMaker</td>
-                                            <td>5,900.00</td>
-                                        </tr>
+                                    	<c:forEach var="item" items="${ listBillsOfMonth }">
+	                                    	<tr>
+	                                            <td>${ item.id }</td>
+	                                            <td>${ item.display_name }</td>
+	                                            <td><fmt:formatNumber type="number" groupingUsed="true" value="${ item.total }" />₫</td>
+	                                        </tr>
+										</c:forEach>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-sm-4 w3-agileits-crd">
-
                 <div class="card card-contact-list">
                     <div class="agileinfo-cdr">
                         <div class="card-header">
-                            <h3>Contacts</h3>
+                            <h3>Quản lý</h3>
                         </div>
                         <div class="card-body p-b-20">
                             <div class="list-group">
                                 <a class="list-group-item media" href="">
                                     <div class="pull-left">
-                                        <img class="lg-item-img" src="images/in1.jpg" alt="">
+                                        <img class="lg-item-img" src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt="">
                                     </div>
                                     <div class="media-body">
                                         <div class="pull-left">
-                                            <div class="lg-item-heading">Lorem</div>
-                                            <small class="lg-item-text">lorem@gmail.com</small>
+                                            <div class="lg-item-heading">Bình</div>
+                                            <small class="lg-item-text">nvbnvb13112000@gmail.com</small>
                                         </div>
                                         <div class="pull-right">
-                                            <div class="lg-item-heading">Ceo</div>
+                                            <div class="lg-item-heading">CEO</div>
                                         </div>
                                     </div>
                                 </a>
-                                <a class="list-group-item media" href="">
-                                    <div class="pull-left">
-                                        <img class="lg-item-img" src="images/in2.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="pull-left">
-                                            <div class="lg-item-heading">Ipsum</div>
-                                            <small class="lg-item-text">ipsum@hotmail.com</small>
-                                        </div>
-                                        <div class="pull-right">
-                                            <div class="lg-item-heading">Director</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="list-group-item media" href="">
-                                    <div class="pull-left">
-                                        <img class="lg-item-img" src="images/in3.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="pull-left">
-                                            <div class="lg-item-heading">Unknown</div>
-                                            <small class="lg-item-text">unknown@gmail.com</small>
-                                        </div>
-                                        <div class="pull-right">
-                                            <div class="lg-item-heading">Manager</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="list-group-item media" href="">
-                                    <div class="pull-left">
-                                        <img class="lg-item-img" src="images/in4.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="pull-left">
-                                            <div class="lg-item-heading">Specimen</div>
-                                            <small class="lg-item-text">specimen@hotmail.com</small>
-                                        </div>
-                                        <div class="pull-right">
-                                            <div class="lg-item-heading">Assistan</div>
-                                        </div>
-                                    </div>
-                                </a>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 w3-agile-crd">
-                <div class="card">
-                    <div class="card-body card-padding">
-                        <div class="widget">
-                            <header class="widget-header">
-                                <h4 class="widget-title">Activities</h4>
-                            </header>
-                            <hr class="widget-separator">
-                            <div class="widget-body">
-                                <div class="streamline">
-                                    <div class="sl-item sl-primary">
-                                        <div class="sl-content">
-                                            <small class="text-muted">5 mins ago</small>
-                                            <p>Williams has just joined Project X</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-danger">
-                                        <div class="sl-content">
-                                            <small class="text-muted">25 mins ago</small>
-                                            <p>Jane has sent a request for access</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-success">
-                                        <div class="sl-content">
-                                            <small class="text-muted">40 mins ago</small>
-                                            <p>Kate added you to her team</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item">
-                                        <div class="sl-content">
-                                            <small class="text-muted">45 minutes ago</small>
-                                            <p>John has finished his task</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-warning">
-                                        <div class="sl-content">
-                                            <small class="text-muted">55 mins ago</small>
-                                            <p>Jim shared a folder with you</p>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-
-                        </div>
+            
+            <div class="col-md-8 agile-info-stat">
+                    <div class="stats-info stats-last widget-shadow">
+                    	<header class="widget-header">
+                                <h4 class="widget-title">Sản phẩm bán chạy</h4>
+                        </header>
+                        <table class="table stats-table ">
+                            <thead>
+                                <tr>
+                                    <th>Xếp hạng</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Số lượng đã bán</th>
+                                    <th>Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            	<c:forEach var="item" items="${ topSellProducts }">
+	                                    	<tr>
+	                                    		<th scope="row"><span class="label label-info">Top</span></th>
+	                                            <td>${ item.name_product }</td>
+	                                            <td><span class="label label-success">${ item.so_luong }<i class="fa fa-level-up"></i></span></td>
+	                                            <td><fmt:formatNumber type="number" groupingUsed="true" value="${ item.tong_tien }" />₫</td>
+	                                        </tr>
+								</c:forEach>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
             <div class="clearfix"></div>
 
             <!--//photoday-section-->
             <!--w3-agileits-pane-->
             <div class="w3-agileits-pane">
-                <div class="col-md-4 wthree-pan">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"> <i class="fa fa-bell fa-fw"></i> Notifications Panel </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item"> <i class="fa fa-comment fa-fw"></i> New Comment <span class="pull-right text-muted small"><em>4 minutes ago</em> </span> </a>
-                                <a href="#" class="list-group-item"> <i class="fa fa-twitter fa-fw"></i> 3 New Followers <span class="pull-right text-muted small"><em>12 minutes ago</em> </span> </a>
-                                <a href="#" class="list-group-item"> <i class="fa fa-envelope fa-fw"></i> Message Sent <span class="pull-right text-muted small"><em>27 minutes ago</em> </span> </a>
-                                <a href="#" class="list-group-item"> <i class="fa fa-tasks fa-fw"></i> New Task <span class="pull-right text-muted small"><em>43 minutes ago</em> </span> </a>
-                                <a href="#" class="list-group-item"> <i class="fa fa-upload fa-fw"></i> Server Rebooted <span class="pull-right text-muted small"><em>11:32 AM</em> </span> </a>
-                                <a href="#" class="list-group-item"> <i class="fa fa-bolt fa-fw"></i> Server Crashed! <span class="pull-right text-muted small"><em>11:13 AM</em> </span> </a>
-                                <a href="#" class="list-group-item"> <i class="fa fa-tasks fa-fw"></i> New Task <span class="pull-right text-muted small"><em>43 minutes ago</em> </span> </a>
-                            </div>
-                            <!-- /.list-group -->
-
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                </div>
-                <div class="col-md-8 agile-info-stat">
-                    <div class="stats-info stats-last widget-shadow">
-                        <table class="table stats-table ">
-                            <thead>
-                                <tr>
-                                    <th>S.NO</th>
-                                    <th>PRODUCT</th>
-                                    <th>STATUS</th>
-                                    <th>PROGRESS</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Lorem ipsum</td>
-                                    <td><span class="label label-success">In progress</span></td>
-                                    <td>
-                                        <h5>85% <i class="fa fa-level-up"></i></h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Aliquam</td>
-                                    <td><span class="label label-warning">New</span></td>
-                                    <td>
-                                        <h5>35% <i class="fa fa-level-up"></i></h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Lorem ipsum</td>
-                                    <td><span class="label label-danger">Overdue</span></td>
-                                    <td>
-                                        <h5 class="down">40% <i class="fa fa-level-down"></i></h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Aliquam</td>
-                                    <td><span class="label label-info">Out of stock</span></td>
-                                    <td>
-                                        <h5>100% <i class="fa fa-level-up"></i></h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Lorem ipsum</td>
-                                    <td><span class="label label-success">In progress</span></td>
-                                    <td>
-                                        <h5 class="down">10% <i class="fa fa-level-down"></i></h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>Aliquam</td>
-                                    <td><span class="label label-warning">New</span></td>
-                                    <td>
-                                        <h5>38% <i class="fa fa-level-up"></i></h5>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <div class="col-sm-4 w3-agileits-crd">
+                
+            </div>
+                
                 <div class="clearfix"></div>
             </div>
             <!--//w3-agileits-pane-->

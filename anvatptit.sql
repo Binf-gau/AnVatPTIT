@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 05, 2021 lúc 03:43 AM
+-- Thời gian đã tạo: Th6 06, 2021 lúc 04:04 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -24,6 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` bigint(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
+  `cmnd` varchar(255) NOT NULL,
+  `birthday` date NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(20) NOT NULL,
+  `address` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `admin`
+--
+
+INSERT INTO `admin` (`id`, `email`, `password`, `phone_number`, `cmnd`, `birthday`, `first_name`, `last_name`, `address`) VALUES
+(4, 'nvbnvb13112000@gmail.com', '$2a$12$0bUJYfF1hgFSF6P9RuTvFOhAGGIIzLB03P8DgfUV2cQJa0rxBx9.i', '0327710091', '241852721', '2000-11-13', 'Nguyễn Văn', 'Bình', '42, Man Thiện, Hiệp Phú, Quận 9'),
+(5, 'pdhl@gmail.com', '$2a$12$IpZW/Up7WEV92NYzaLASx.pxwtzFnTyEe89lRwHheTyDvO7rO968O', '0334711900', '2131314123', '2000-12-01', 'Phan Đình Hoàng', 'Long', '97, Man Thiện, Hiệp Phú, Quận 9');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `billdetail`
 --
 
@@ -40,20 +66,11 @@ CREATE TABLE `billdetail` (
 
 INSERT INTO `billdetail` (`id_product`, `id_bills`, `quanty`, `total`) VALUES
 (1, 11, 3, 690000),
-(1, 14, 3, 690000),
-(4, 16, 2, 100000),
-(4, 17, 1, 50000),
+(1, 18, 3, 300000),
 (45, 11, 1, 130000),
-(47, 13, 1, 109000),
-(47, 14, 6, 654000),
-(48, 12, 1, 70000),
-(48, 13, 1, 70000),
 (49, 11, 3, 210000),
 (51, 15, 2, 500000),
-(51, 16, 1, 250000),
-(51, 17, 1, 250000),
-(55, 15, 1, 200000),
-(55, 16, 2, 400000);
+(55, 15, 1, 200000);
 
 -- --------------------------------------------------------
 
@@ -81,12 +98,8 @@ CREATE TABLE `bills` (
 
 INSERT INTO `bills` (`id`, `user`, `phone`, `display_name`, `address`, `total`, `quanty`, `created_at`, `note`, `id_user`, `id_status`) VALUES
 (11, 'nvbnvb13112000@gmail.com', '0327710091', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9', 1030000, 7, '2021-05-25 10:14:10', 'Không giao hàng vào giờ hành chính', 4, 2),
-(12, 'nst@gmail.com', '0327710091', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9', 193000, 2, '2021-05-25 16:59:03', 'Không giao hàng vào thứ 2', 5, 1),
-(13, 'nst@gmail.com', '09213321321', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9', 179000, 2, '2021-05-25 17:02:46', 'Không nhận hàng vào thứ 2', 5, 1),
-(14, 'nst@gmail.com', '02312312432', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9', 1644000, 12, '2021-05-28 20:21:51', 'fadfa è', 5, 1),
 (15, 'nvbnvb13112000@gmail.com', '0327710091', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9', 700000, 3, '2021-06-02 20:34:16', 'Không giao hàng vào giờ hành chính', 4, 2),
-(16, 'nvbnvb13112000@gmail.com', '0327710091', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9', 750000, 5, '2021-06-02 20:44:30', 'không giao hàng vào sáng thứ 3', 4, 2),
-(17, 'nvbnvb13112000@gmail.com', '0327710091', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9', 300000, 2, '2021-06-02 20:50:37', 'không giao hàng vào tối thứ 3', 4, 2);
+(18, 'nst@gmail.com', '123131312', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9', 300000, 3, '2021-06-06 17:59:40', 'giao nhanh nhé', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -105,9 +118,9 @@ CREATE TABLE `categorys` (
 --
 
 INSERT INTO `categorys` (`id`, `name`, `description`) VALUES
-(3, 'Mứt', 'Mứt trái cây'),
-(4, 'Đồ khô', 'Bán những đồ sấy, đồ khun khô '),
-(8, 'Nước giải khát', 'Nhập hàng từ bên ngoài về');
+(3, 'Mứt', 'Mứt trái cây, mứt dẻo'),
+(4, 'Đồ khô', 'Bán những đồ sấy, đồ chiên, khun khô, ...'),
+(10, 'Nước giải khát', 'Nhập hàng từ bên ngoài về');
 
 -- --------------------------------------------------------
 
@@ -245,7 +258,8 @@ CREATE TABLE `status` (
 INSERT INTO `status` (`id`, `name`) VALUES
 (1, 'Chờ xác nhận'),
 (2, 'Đã xác nhận'),
-(3, 'Đơn hàng bị hủy');
+(3, 'Đơn hàng bị hủy'),
+(4, 'Đã thanh toán');
 
 -- --------------------------------------------------------
 
@@ -267,11 +281,19 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `user`, `password`, `display_name`, `address`) VALUES
 (4, 'nvbnvb13112000@gmail.com', '$2a$12$9NoEuBebQkXAYQPuZt27jueRrn2Twyv20oCzx19eOS4iEcDyo.wMO', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9'),
-(5, 'nst@gmail.com', '$2a$12$7MmaPBVN/RO.AJRoTk18Ge/.jUWkUGWNQZ/8OfPL7GrS3tDuq7QSa', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9');
+(5, 'nst@gmail.com', '$2a$12$7MmaPBVN/RO.AJRoTk18Ge/.jUWkUGWNQZ/8OfPL7GrS3tDuq7QSa', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9'),
+(6, 'dtt@gmail.com', '$2a$12$Rw5yJstglxmSV1c7tMYgLuGn6zd9qIEvE2t.uPB2CNffAf2/PeDwC', 'Đỗ Thị Tâm', '97, Man Thiện, Hiệp Phú, Quận 9'),
+(8, 'pdhl@gmail.com', '$2a$12$CH6h1BbyLSAgXkzTUmRD.OGv3qFnTcGSJalJvldwgv24eadbaEmp6', 'Phan Đình Hoàng Long', '97 Man Thiện, Hiệp Phú, Quận 9');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `billdetail`
@@ -339,16 +361,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT cho bảng `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `categorys`
 --
 ALTER TABLE `categorys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `images`
@@ -378,13 +406,13 @@ ALTER TABLE `slides`
 -- AUTO_INCREMENT cho bảng `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

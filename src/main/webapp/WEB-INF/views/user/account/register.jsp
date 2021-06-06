@@ -41,6 +41,13 @@ Body Section
 				</ul>
 				<hr class="soft" />
 
+				<c:if test="${ not empty messageResponse}">
+					<div class="alert alert-${alert}">	
+						<p>${messageResponse}</p>
+					</div>
+				</c:if>
+
+
 				<div class="row">
 					<div class="span4">
 						<div class="well">
@@ -85,8 +92,8 @@ Body Section
 					<div class="span4">
 						<div class="well">
 							<h5>Đăng nhập hệ thống</h5>
-							<c:if test="${ statusLogin }"></c:if>
-							<h1> ${ statusLogin }</h1>
+								<h1> ${ statusLogin }</h1>
+							
 							<form:form action="dang-nhap" method="POST" modelAttribute="user"> 
 								<div class="control-group">
 									<label class="control-label" for="inputEmail">Tài khoản</label>

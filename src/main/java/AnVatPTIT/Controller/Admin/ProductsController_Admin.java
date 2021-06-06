@@ -33,6 +33,7 @@ public class ProductsController_Admin extends BaseController_Admin {
 	
 	@RequestMapping(value = "admin/san-pham/{id}")
 	public ModelAndView Product(@PathVariable String id) {
+		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		_mvShare.setViewName("admin/products/products");
 		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();
 		PaginatesDto paginateInfo = paginateService.GetInfoPaginates(totalData, totalProductsPage, 1);
@@ -45,6 +46,7 @@ public class ProductsController_Admin extends BaseController_Admin {
 	
 	@RequestMapping(value = "admin/san-pham/{id}/{currentPage}")
 	public ModelAndView Product(@PathVariable String id, @PathVariable String currentPage) {
+		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		_mvShare.setViewName("admin/products/products");
 		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();
 		PaginatesDto paginateInfo = paginateService.GetInfoPaginates(totalData, totalProductsPage, Integer.parseInt(currentPage));
@@ -89,6 +91,7 @@ public class ProductsController_Admin extends BaseController_Admin {
 	
 	@RequestMapping(value = "/admin/them-san-pham", method = RequestMethod.GET)
 	public ModelAndView ThemSanPham() {
+		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		_mvShare.addObject("product", new ProductsDto());
 		_mvShare.setViewName("admin/products/add_product");
 		return _mvShare;

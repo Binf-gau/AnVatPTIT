@@ -2,8 +2,6 @@ package AnVatPTIT.Dao;
 
 import org.springframework.stereotype.Repository;
 
-import AnVatPTIT.Dto.ProductsDto;
-import AnVatPTIT.Dto.ProductsDtoMapper;
 import AnVatPTIT.Entity.MapperUsers;
 import AnVatPTIT.Entity.Users;
 
@@ -35,5 +33,12 @@ public class UsersDao extends BaseDao {
 		String sql = "SELECT * FROM users WHERE user = '"+user.getUser()+"'";
 		Users result = _jdbcTemplate.queryForObject(sql, new MapperUsers());
 		return result;
+	}
+
+	public int TotalUsers() {
+		StringBuffer sql = new StringBuffer();
+		sql.append("SELECT COUNT(*) FROM users");
+		int insert = _jdbcTemplate.queryForObject(sql.toString(), new Object[] {}, Integer.class);
+		return insert;
 	}
 }

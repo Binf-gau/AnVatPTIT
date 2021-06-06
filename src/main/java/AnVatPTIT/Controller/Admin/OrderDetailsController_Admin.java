@@ -18,6 +18,7 @@ public class OrderDetailsController_Admin extends BaseController_Admin {
 	
 	@RequestMapping("/admin/don-hang")
 	public ModelAndView ChiTietHoaDon() {
+		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		_mvShare.addObject("bills", billsService.GetAllBills());
 		_mvShare.addObject("liststatus", billsService.GetDataStaus());
 		_mvShare.addObject("status", new Status(1));

@@ -83,8 +83,7 @@
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                         <button type="submit" class="btn-primary btn">Thêm sản phẩm</button>
-                                        <button type="submit" class="btn-default btn">Cancel</button>
-                                        <button type="submit" class="btn-inverse btn">Reset</button>
+                                        <button type="reset" class="btn-inverse btn">Reset</button>
                                     </div>
                                 </div>
                             </div>

@@ -54,8 +54,12 @@
             </table><br/>
 
 	<a href="trang-chu" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua sắm </a>
-	<a href="checkout" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
-
+	<c:if test="${ not empty LoginInfo }">
+		<a href="checkout" class="shopBtn btn-large pull-right"> Thanh toán <span class="icon-arrow-right"></span></a> 
+	</c:if>
+	<c:if test="${ empty LoginInfo }">
+		<a href="dang-ky" class="shopBtn btn-large pull-right"> Thanh toán <span class="icon-arrow-right"></span></a> 
+	</c:if>
 </div>
 </div>
 </div>

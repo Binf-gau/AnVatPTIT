@@ -8,6 +8,12 @@
                 <li class="breadcrumb-item"><i class="fa fa-angle-right"></i><a href='<c:url value="/admin"/>'>Trang chủ</a> <i class="fa fa-angle-right"></i>Thêm loại sản phẩm</li>
             </ol>
             
+            <c:if test="${ not empty messageResponse}">
+			    <ol class="breadcrumb">
+                	<li class="breadcrumb-item compose w3layouts"> <h2>${messageResponse}</h2></li>
+            	</ol>
+            </c:if>
+            
             <div class="grid-form1">
                 <div class="tab-content">
                     <div class="tab-pane active" id="horizontal-form">
@@ -28,8 +34,7 @@
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                         <button type="submit" class="btn-primary btn">Thêm loại sản phẩm</button>
-                                        <button type="submit" class="btn-default btn">Cancel</button>
-                                        <button type="submit" class="btn-inverse btn">Reset</button>
+                                        <button type="reset" class="btn-inverse btn">Reset</button>
                                     </div>
                                 </div>
                             </div>
