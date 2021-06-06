@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 06, 2021 lúc 04:04 PM
+-- Thời gian đã tạo: Th6 06, 2021 lúc 06:16 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 7.4.16
 
@@ -68,9 +68,11 @@ INSERT INTO `billdetail` (`id_product`, `id_bills`, `quanty`, `total`) VALUES
 (1, 11, 3, 690000),
 (1, 18, 3, 300000),
 (45, 11, 1, 130000),
+(45, 19, 1, 130000),
 (49, 11, 3, 210000),
 (51, 15, 2, 500000),
-(55, 15, 1, 200000);
+(55, 15, 1, 200000),
+(55, 19, 1, 200000);
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,8 @@ CREATE TABLE `bills` (
 INSERT INTO `bills` (`id`, `user`, `phone`, `display_name`, `address`, `total`, `quanty`, `created_at`, `note`, `id_user`, `id_status`) VALUES
 (11, 'nvbnvb13112000@gmail.com', '0327710091', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9', 1030000, 7, '2021-05-25 10:14:10', 'Không giao hàng vào giờ hành chính', 4, 2),
 (15, 'nvbnvb13112000@gmail.com', '0327710091', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9', 700000, 3, '2021-06-02 20:34:16', 'Không giao hàng vào giờ hành chính', 4, 2),
-(18, 'nst@gmail.com', '123131312', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9', 300000, 3, '2021-06-06 17:59:40', 'giao nhanh nhé', 5, 1);
+(18, 'nst@gmail.com', '123131312', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9', 300000, 3, '2021-06-06 17:59:40', 'giao nhanh nhé', 5, 1),
+(19, 'pdhl@gmail.com', '0921465465', 'Phan Đình Hoàng Long', '97 Man Thiện, Hiệp Phú, Quận 9', 330000, 2, '2021-06-06 21:26:09', 'Không giao hàng vào thứ 4', 8, 1);
 
 -- --------------------------------------------------------
 
@@ -120,7 +123,9 @@ CREATE TABLE `categorys` (
 INSERT INTO `categorys` (`id`, `name`, `description`) VALUES
 (3, 'Mứt', 'Mứt trái cây, mứt dẻo'),
 (4, 'Đồ khô', 'Bán những đồ sấy, đồ chiên, khun khô, ...'),
-(10, 'Nước giải khát', 'Nhập hàng từ bên ngoài về');
+(10, 'Nước giải khát', 'Nhập hàng từ bên ngoài về'),
+(12, 'Bánh kẹo', 'Các loại bánh quy, bánh ngọt, bla bla'),
+(13, 'Cơm', 'Cơm');
 
 -- --------------------------------------------------------
 
@@ -150,7 +155,8 @@ INSERT INTO `images` (`id`, `id_product`, `img`) VALUES
 (42, 50, 'da-heo-mam-hanh.jpg'),
 (43, 51, 'muc-hap-nuoc-dua.jpg'),
 (44, 55, 'chuoi-cao-say.jpg'),
-(45, 57, 'mut_tao.jpg');
+(45, 57, 'mut_tao.jpg'),
+(46, 58, 'keo-xop-marshmallow.jpg');
 
 -- --------------------------------------------------------
 
@@ -213,7 +219,8 @@ INSERT INTO `products` (`id`, `id_category`, `name`, `price`, `sale`, `title`, `
 (50, 4, 'Da heo mắm hành ', 70000, 0, 'Đáng tiền lắm', 1, 1, 'Nguyên liệu: da heo + mắm + hành', '2021-05-23 20:09:26'),
 (51, 4, 'Mực hấp nước dừa', 250000, 0, 'Sản phẩm bán rất chạy', 1, 1, 'Được làm từu mực, đem lên hấp với nước dừa, hấp trong 3 ngày', '2021-05-24 20:09:18'),
 (55, 4, 'Chuối cao sấy', 200000, 0, 'Chuối nhà trồng', 1, 1, 'Ngon ', '2021-05-28 20:56:25'),
-(57, 3, 'Mứt táo', 75000, 0, 'Nhà mình làm! Đảm bảo ngon sạch.', 1, 1, 'Mứt táo được làm từ những quả táo tươi ngon hái trên cây xuống.<br>\r\nĐục hột và nấu cùng đường và sấy khô. Rất an toàn và sạch sẽ!<br>\r\nThơm thơm dai dai dẻo dẻo ngọt ngọt vị đậm đà của táo cây ngày xưa!<br>\r\nHiện tại đang mùa mứt táo tái ra lò thơm ngon!<br>\r\nNsx: 02/2021<br>\r\nHsd: 6 tháng từ nsx', '2021-06-03 20:35:12');
+(57, 3, 'Mứt táo', 75000, 0, 'Nhà mình làm! Đảm bảo ngon sạch.', 1, 1, 'Mứt táo được làm từ những quả táo tươi ngon hái trên cây xuống.<br>\r\nĐục hột và nấu cùng đường và sấy khô. Rất an toàn và sạch sẽ!<br>\r\nThơm thơm dai dai dẻo dẻo ngọt ngọt vị đậm đà của táo cây ngày xưa!<br>\r\nHiện tại đang mùa mứt táo tái ra lò thơm ngon!<br>\r\nNsx: 02/2021<br>\r\nHsd: 6 tháng từ nsx', '2021-06-03 20:35:12'),
+(58, 12, 'Kẹo xốp marshmallow', 134000, 0, 'Mềm mềm', 1, 1, 'Được sản xuất tại Mỹ (Tho)', '2021-06-06 23:03:10');
 
 -- --------------------------------------------------------
 
@@ -283,7 +290,8 @@ INSERT INTO `users` (`id`, `user`, `password`, `display_name`, `address`) VALUES
 (4, 'nvbnvb13112000@gmail.com', '$2a$12$9NoEuBebQkXAYQPuZt27jueRrn2Twyv20oCzx19eOS4iEcDyo.wMO', 'Nguyễn Văn Bình', '44, Man Thiện, Hiệp Phú, Quận 9'),
 (5, 'nst@gmail.com', '$2a$12$7MmaPBVN/RO.AJRoTk18Ge/.jUWkUGWNQZ/8OfPL7GrS3tDuq7QSa', 'Ngô Sĩ Tiến', '44, Man Thiện, Hiệp Phú, Quận 9'),
 (6, 'dtt@gmail.com', '$2a$12$Rw5yJstglxmSV1c7tMYgLuGn6zd9qIEvE2t.uPB2CNffAf2/PeDwC', 'Đỗ Thị Tâm', '97, Man Thiện, Hiệp Phú, Quận 9'),
-(8, 'pdhl@gmail.com', '$2a$12$CH6h1BbyLSAgXkzTUmRD.OGv3qFnTcGSJalJvldwgv24eadbaEmp6', 'Phan Đình Hoàng Long', '97 Man Thiện, Hiệp Phú, Quận 9');
+(8, 'pdhl@gmail.com', '$2a$12$CH6h1BbyLSAgXkzTUmRD.OGv3qFnTcGSJalJvldwgv24eadbaEmp6', 'Phan Đình Hoàng Long', '97 Man Thiện, Hiệp Phú, Quận 9'),
+(14, 'ptt@gmail.com', '$2a$12$w0gm52kaM/W3wsa.lTExBeld.torqibVDtyvTwfwq5eeFcITHRUgS', 'Phan Thị Trang', '34, Đường 104, Hiệp Phú, Quận 9');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -293,7 +301,9 @@ INSERT INTO `users` (`id`, `user`, `password`, `display_name`, `address`) VALUES
 -- Chỉ mục cho bảng `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `cmnd` (`cmnd`);
 
 --
 -- Chỉ mục cho bảng `billdetail`
@@ -354,7 +364,8 @@ ALTER TABLE `status`
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user` (`user`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -364,25 +375,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `categorys`
 --
 ALTER TABLE `categorys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT cho bảng `menus`
@@ -394,7 +405,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT cho bảng `slides`
@@ -412,7 +423,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

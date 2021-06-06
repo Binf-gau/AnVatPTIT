@@ -33,9 +33,13 @@ public class AdminsDao extends BaseDao {
 		sql.append("    '"+admin.getLast_name()+"', ");
 		sql.append("    '"+admin.getAddress()+"' ");
 		sql.append(")");
-		
-		int insert = _jdbcTemplate.update(sql.toString());
-		return insert;
+		try {
+			int insert = _jdbcTemplate.update(sql.toString());
+			return insert;
+		}
+		catch (Exception e) {
+			return 0;
+		}
 	}
 
 	public Admins GetAdminByAccount(Admins admin) {

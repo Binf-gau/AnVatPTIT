@@ -24,15 +24,24 @@ public class UsersDao extends BaseDao {
 		sql.append("    '" + user.getDisplay_name() + "', ");
 		sql.append("    '" + user.getAddress() + "' ");
 		sql.append(")");
-
-		int insert = _jdbcTemplate.update(sql.toString());
-		return insert;
+		try {
+			int insert = _jdbcTemplate.update(sql.toString());
+			return insert;
+		}
+		catch (Exception e) {
+			return 0;
+		}
 	}
-	
+
 	public Users GetUserByAccount(Users user) {
 		String sql = "SELECT * FROM users WHERE user = '"+user.getUser()+"'";
-		Users result = _jdbcTemplate.queryForObject(sql, new MapperUsers());
-		return result;
+		try {
+			Users result = _jdbcTemplate.queryForObject(sql, new MapperUsers());
+			return result;
+		}
+		catch(Exception e) {
+			return null;
+		}
 	}
 
 	public int TotalUsers() {

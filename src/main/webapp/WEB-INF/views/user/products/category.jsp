@@ -60,8 +60,9 @@
 										</strong>
 									</p>
 									<h4>
-										<a class="shopBtn" href="#" title="add to cart"> Add to
-											cart </a>
+										<a class="shopBtn" href="<c:url value="/AddCart/${ item.id_product }"/>" title="add to cart">
+											Thêm giỏ hàng
+										</a> 
 									</h4>
 
 									<br class="clr">
