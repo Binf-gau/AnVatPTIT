@@ -12,7 +12,7 @@ import AnVatPTIT.Service.Admin.AccountServiceImpl_Admin;
 import AnVatPTIT.Service.Admin.IAccountService_Admin;
 
 @Controller
-public class AdminController extends BaseController_Admin {
+public class AdminController_Admin extends BaseController_Admin {
 	
 	@Autowired
 	IAccountService_Admin accountService = new AccountServiceImpl_Admin();

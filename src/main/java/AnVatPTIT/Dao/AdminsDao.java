@@ -43,8 +43,12 @@ public class AdminsDao extends BaseDao {
 	}
 
 	public Admins GetAdminByAccount(Admins admin) {
-		String sql = "SELECT * FROM admins WHERE email = '" + admin.getEmail() + "'";
-		Admins result = _jdbcTemplate.queryForObject(sql, new MapperAdmins());
-		return result;
+		String sql = "SELECT * FROM admin WHERE email = '" + admin.getEmail() + "'";
+		try {
+			Admins result = _jdbcTemplate.queryForObject(sql, new MapperAdmins());
+			return result;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }

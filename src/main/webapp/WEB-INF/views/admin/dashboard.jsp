@@ -185,9 +185,9 @@ Export <i class="fa fa-angle-down"></i>
                                 </tr>
                             </thead>
                             <tbody>
-                            	<c:forEach var="item" items="${ topSellProducts }">
+                            	<c:forEach var="item" items="${ topSellProducts }" varStatus="status">
 	                                    	<tr>
-	                                    		<th scope="row"><span class="label label-info">Top</span></th>
+	                                    		<th scope="row"><span class="label label-info">xếp hạng ${ status.index + 1 }</span></th>
 	                                            <td>${ item.name_product }</td>
 	                                            <td><span class="label label-success">${ item.so_luong }<i class="fa fa-level-up"></i></span></td>
 	                                            <td><fmt:formatNumber type="number" groupingUsed="true" value="${ item.tong_tien }" />₫</td>

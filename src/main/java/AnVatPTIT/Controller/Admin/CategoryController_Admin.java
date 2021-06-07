@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,7 +45,11 @@ public class CategoryController_Admin extends BaseController_Admin {
 	}
 	
 	@RequestMapping(value = "/admin/them-loai-san-pham", method = RequestMethod.POST)
-	public ModelAndView CreateCategorys(@ModelAttribute("category") Categorys category) {
+	public ModelAndView CreateCategorys(@ModelAttribute("category") Categorys category, BindingResult errors) {
+		if(category.getName().trim().length() == 0) {
+			_mvShare.addObject( "messageResponse", "Vui lòng nhập tên loại sản phẩm!");
+			return _mvShare;
+		}
 		int count = categoryService.AddCategory(category);
 		if (count > 0) {
 			_mvShare.addObject("messageResponse", "Thêm loại sản phẩm thành công");

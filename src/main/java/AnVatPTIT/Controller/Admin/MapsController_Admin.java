@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class MapsController extends BaseController_Admin{
+public class MapsController_Admin extends BaseController_Admin{
 	
 	@RequestMapping("/admin/maps")
 	public ModelAndView Maps() {

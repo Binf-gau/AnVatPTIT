@@ -26,42 +26,42 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="notification_header">
-                                                <h3>You have 3 new messages</h3>
+                                                <h3>Bạn có 3 tin nhắn mới</h3>
                                             </div>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <div class="user_img"><img src="images/in11.jpg" alt=""></div>
+                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
                                                 <div class="notification_desc">
-                                                    <p>Lorem ipsum dolor</p>
-                                                    <p><span>1 hour ago</span></p>
+                                                    <p>Ngô Sĩ Tiến</p>
+                                                    <p><span>50 phút trước</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>
                                         </li>
                                         <li class="odd">
                                             <a href="#">
-                                                <div class="user_img"><img src="images/in10.jpg" alt=""></div>
+                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
                                                 <div class="notification_desc">
-                                                    <p>Lorem ipsum dolor </p>
-                                                    <p><span>1 hour ago</span></p>
+                                                    <p>Phan Thị Trang </p>
+                                                    <p><span>2 giờ  trước</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <div class="user_img"><img src="images/in9.jpg" alt=""></div>
+                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
                                                 <div class="notification_desc">
-                                                    <p>Lorem ipsum dolor</p>
-                                                    <p><span>1 hour ago</span></p>
+                                                    <p>Bùi Tấn Sang</p>
+                                                    <p><span>6 giờ trước</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>
                                         </li>
                                         <li>
                                             <div class="notification_bottom">
-                                                <a href="#">See all messages</a>
+                                                <a href="#">Xem tất cả tin nhắn</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -71,42 +71,42 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="notification_header">
-                                                <h3>You have 3 new notification</h3>
+                                                <h3>Bạn có 3 thông báo mới</h3>
                                             </div>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <div class="user_img"><img src="images/in8.jpg" alt=""></div>
+                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
                                                 <div class="notification_desc">
-                                                    <p>Lorem ipsum dolor</p>
-                                                    <p><span>1 hour ago</span></p>
+                                                    <p>Có 1 đơn hàng mới</p>
+                                                    <p><span>58 phút trước</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>
                                         </li>
                                         <li class="odd">
                                             <a href="#">
-                                                <div class="user_img"><img src="images/in6.jpg" alt=""></div>
+                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
                                                 <div class="notification_desc">
-                                                    <p>Lorem ipsum dolor</p>
-                                                    <p><span>1 hour ago</span></p>
+                                                    <p>Có 1 đơn hàng mới</p>
+                                                    <p><span>1 giờ trước</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <div class="user_img"><img src="images/in7.jpg" alt=""></div>
+                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
                                                 <div class="notification_desc">
-                                                    <p>Lorem ipsum dolor</p>
-                                                    <p><span>1 hour ago</span></p>
+                                                    <p>Có 1 đơn hàng mới</p>
+                                                    <p><span>10 giờ trước</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>
                                         </li>
                                         <li>
                                             <div class="notification_bottom">
-                                                <a href="#">See all notifications</a>
+                                                <a href="#">Xem tất cả thông báo</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -116,7 +116,7 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="notification_header">
-                                                <h3>You have 8 pending task</h3>
+                                                <h3>Bạn có 9 việc cần làm</h3>
                                             </div>
                                         </li>
                                         <li>
@@ -165,7 +165,7 @@
                                         </li>
                                         <li>
                                             <div class="notification_bottom">
-                                                <a href="#">See all pending tasks</a>
+                                                <a href="#">Xem tất cả danh sách cần làm</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -185,7 +185,7 @@
                                     <div class="profile_img">
                                         <span class="prfil-img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""> </span>
                                         <div class="user-name">
-                                            <p>Văn Bình</p>
+                                            <p>${ AdminInfo.last_name }</p>
                                             <span>Quản trị viên</span>
                                         </div>
                                         <i class="fa fa-angle-down"></i>
@@ -194,9 +194,9 @@
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu drp-mnu">
-                                    <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
-                                    <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-                                    <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                    <li> <a href="#"><i class="fa fa-cog"></i> Cài đặt</a> </li>
+                                    <li> <a href="#"><i class="fa fa-user"></i> Thông tin</a> </li>
+                                    <li> <a href="logout"><i class="fa fa-sign-out"></i> Đăng xuất</a> </li>
                                 </ul>
                             </li>
                         </ul>

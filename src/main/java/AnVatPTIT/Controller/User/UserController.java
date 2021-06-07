@@ -41,7 +41,7 @@ public class UserController extends BaseController {
 	}
 	
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
-	public ModelAndView Login(HttpServletRequest request, HttpSession session, @ModelAttribute("user") Users user) {
+	public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users user) {
 		user = accountService.CheckAccount(user);
 		if (user != null) {
 			_mvShare.setViewName("redirect:/");

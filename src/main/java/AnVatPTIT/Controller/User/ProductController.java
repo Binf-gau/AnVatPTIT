@@ -16,6 +16,7 @@ public class ProductController extends BaseController{
 	
 	@RequestMapping(value = { "chi-tiet-san-pham/{id}" })
 	public ModelAndView Index(@PathVariable long id) {
+		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		_mvShare.setViewName("user/products/product");
 		_mvShare.addObject("product", _productService.GetProductByID(id));
 		int idCategory = _productService.GetProductByID(id).getId_category();

@@ -27,6 +27,8 @@
 	<!-- lined-icons -->
 	<link rel="stylesheet" href="<c:url value="/assets/admin/css/icon-font.min.css" />" type='text/css' />
 	<!-- //lined-icons -->
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="<c:url value="/assets/user/ico/favicon.ico" />">
 </head>
 
 <body>
@@ -34,22 +36,27 @@
 	<div class="container">
 	<div class="sin-w3-agile">
 		<h2>Đăng nhập tài khoản quản trị</h2>
-		<form action="#" method="post">
+		<form:form  action="login" method="POST" modelAttribute="admin">
 			<div class="username">
 				<span class="username">Tài khoản:</span>
-				<input type="text" name="name" class="name" placeholder="" required="">
+				<form:input type="text" name="name" class="name" placeholder="Nhập tài khoản" required="" path="email" />
 				<div class="clearfix"></div>
 			</div>
 			<div class="password-agileits">
 				<span class="username">Mật khẩu:</span>
-				<input type="password" name="password" class="password" placeholder="" required="">
+				<form:input type="password" name="password" class="password" placeholder="Nhập tài khoản" required="" path="password" />
 				<div class="clearfix"></div>
 			</div>
+			<div class="rem-for-agile">
+				<c:if test="${ not empty statusLogin }">
+					<h4>${ statusLogin }</h4>
+				</c:if>
+			</div>
 			<div class="login-w3">
-					<input type="submit" class="login" value="Sign In">
+					<input type="submit" class="login" value="Đăng nhập">
 			</div>
 			<div class="clearfix"></div>
-		</form>
+		</form:form>
 		<div class="back">
 			<a href='<c:url value="/"/>'>Quay lại trang chủ</a>
 		</div>
