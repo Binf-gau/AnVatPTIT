@@ -61,7 +61,9 @@ public class BillsDao extends BaseDao {
 
 	public List<Bills> GetAllBills() {
 		List<Bills> list = new ArrayList<Bills>();
-		String sql = "SELECT * FROM bills";
+		String sql = "SELECT `id`, `user`, `phone`, `display_name`, `address`, `total`, `quanty`, `created_at`, `note`, `id_user`, `id_status` FROM bills\r\n"
+				+ "WHERE 1=1\r\n"
+				+ "ORDER BY created_at ASC";
 		list = _jdbcTemplate.query(sql, new MapperBills());
 		return list;
 	}

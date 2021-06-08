@@ -8,4 +8,7 @@
 	<decorator name="login" page="login.jsp">
 		<pattern>/login*</pattern>
 	</decorator>
+	<decorator name="errorpage" page="errorpage.jsp">
+		<pattern>/errorpage*</pattern>
+	</decorator>
 </decorators>

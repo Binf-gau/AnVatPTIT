@@ -85,4 +85,11 @@ public class CategorysDao extends BaseDao {
 		int insert = _jdbcTemplate.queryForObject(sql.toString(), new Object[] {}, Integer.class);
 		return insert;
 	}
+
+	public int CheckQuantyCategory(int id) {
+		StringBuffer sql = new StringBuffer();
+		sql.append("SELECT COUNT(*) FROM products WHERE id_category = " + id);
+		int insert = _jdbcTemplate.queryForObject(sql.toString(), new Object[] {}, Integer.class);
+		return insert;
+	}
 }

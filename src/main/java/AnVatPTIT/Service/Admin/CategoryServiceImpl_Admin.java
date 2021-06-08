@@ -42,5 +42,9 @@ public class CategoryServiceImpl_Admin implements ICategoryService_Admin {
 	public int DeleteCategory(int id) {
 		return categorysDao.DeleteCategory(id);
 	}
+
+	public int CheckQuantyCategory(int id) {
+		return categorysDao.CheckQuantyCategory(id);
+	}
 	
 }

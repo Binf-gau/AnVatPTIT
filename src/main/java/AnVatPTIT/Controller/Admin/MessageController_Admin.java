@@ -6,9 +6,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MessageController_Admin extends BaseController_Admin{
-	@RequestMapping("/admin/message")
+	@RequestMapping("/errorpage")
 	public ModelAndView Message() {
-		_mvShare.setViewName("admin/errorpage");
+		_mvShare.setViewName("layouts/errorpage");
 		return _mvShare;
 	}
 }

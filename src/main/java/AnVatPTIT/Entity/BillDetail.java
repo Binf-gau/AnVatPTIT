@@ -1,7 +1,6 @@
 package AnVatPTIT.Entity;
 
 public class BillDetail {
-	private long id;
 	private long id_product;
 	private long id_bills;
 	private int quanty;
@@ -9,14 +8,6 @@ public class BillDetail {
 
 	public BillDetail() {
 		super();
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public long getId_product() {

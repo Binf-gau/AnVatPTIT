@@ -16,7 +16,7 @@ public class TopSellProductsDao extends BaseDao {
 				+ "  FROM ( billdetail AS bd INNER JOIN products AS p ON bd.id_product = p.id)\r\n"
 				+ "  GROUP BY id_product\r\n"
 				+ "  ORDER BY so_luong DESC\r\n"
-				+ "  LIMIT 10 ");
+				+ "  LIMIT 20 ");
 		List<TopSellProductsDto> listTopSellProducts = _jdbcTemplate.query(sql.toString(), new MapperTopSellProducts());
 		return listTopSellProducts;
 	}

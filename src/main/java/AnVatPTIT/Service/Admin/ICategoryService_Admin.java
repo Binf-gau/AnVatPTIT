@@ -15,4 +15,5 @@ public interface ICategoryService_Admin {
 	public int EditCategory(Categorys category);
 	public int AddCategory(Categorys category);
 	public int DeleteCategory(int id);
+	public int CheckQuantyCategory(int id);
 }

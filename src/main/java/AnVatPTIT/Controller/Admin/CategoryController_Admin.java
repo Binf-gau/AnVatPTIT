@@ -31,6 +31,9 @@ public class CategoryController_Admin extends BaseController_Admin {
 	
 	@RequestMapping(value = "admin/xoa-loai-san-pham/{id}")
 	public String DeleteProduct(HttpServletRequest request, @PathVariable int id) {
+		if(categoryService.CheckQuantyCategory(id) > 0) {
+			return "redirect:"+request.getHeader("Referer");
+		}
 		categoryService.DeleteCategory(id);
 		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
 		return "redirect:"+request.getHeader("Referer");

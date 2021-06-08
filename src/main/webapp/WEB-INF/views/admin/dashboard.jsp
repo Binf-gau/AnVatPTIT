@@ -67,7 +67,7 @@
             <div class="agileinfo-grap">
                 <div class="agileits-box">
                     <header class="agileits-box-header clearfix">
-                        <h3>Số liệu thống kê</h3>
+                        <h3>Thống kê doanh thu</h3>
                         <div class="toolbar">
                             <div class="pull-left">
                                 <div class="btn-group">
@@ -234,5 +234,74 @@ Export <i class="fa fa-angle-down"></i>
     
     <div class="clearfix"></div>
 
+	<script>
+        $(document).ready(function() {
+            //BOX BUTTON SHOW AND CLOSE
+            jQuery('.small-graph-box').hover(function() {
+                jQuery(this).find('.box-button').fadeIn('fast');
+            }, function() {
+                jQuery(this).find('.box-button').fadeOut('fast');
+            });
+            jQuery('.small-graph-box .box-close').click(function() {
+                jQuery(this).closest('.small-graph-box').fadeOut(200);
+                return false;
+            });
+
+            //CHARTS
+            function gd(year, day, month) {
+                return new Date(year, month - 1, day).getTime();
+            }
+
+            graphArea2 = Morris.Area({
+                element: 'hero-area',
+                padding: 10,
+                behaveLikeLine: true,
+                gridEnabled: false,
+                gridLineColor: '#dddddd',
+                axes: true,
+                resize: true,
+                smooth: true,
+                pointSize: 0,
+                lineWidth: 0,
+                fillOpacity: 0.85,
+                data: [{
+                    period: '2020 Q4',
+                    status1: null,
+                    status2: null,
+                    status3: null
+                }, {
+                    period: '2021 Q1',
+                    status1: null,
+                    status2: null,
+                    status3: null
+                }, {
+                    period: '2021 Q2',
+                    status1: 2300000,
+                    status2: 2000000,
+                    status3: 300000
+                }, {
+                    period: '2021 Q3',
+                    status1: 1120000,
+                    status2: 1000000,
+                    status3: 0
+                }, {
+                    period: '2021 Q4',
+                    status1: null,
+                    status2: null,
+                    status3: null
+                }],
+                lineColors: ['#ff4a43', '#a2d200', '#22beef'],
+                xkey: 'period',
+                redraw: true,
+                ykeys: ['status1', 'status2', 'status3'],
+                labels: ['Đơn đã thanh toán', 'Đơn chờ xác nhận', 'Đơn bị hủy'],
+                pointSize: 5,
+                hideHover: 'auto',
+                resize: true
+            });
+
+
+        });
+    </script>
 
 </body>
