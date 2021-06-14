@@ -77,10 +77,13 @@ public class BillsDao extends BaseDao {
 
 	public List<Bills> GetAllBillsOfMonth() {
 		List<Bills> list = new ArrayList<Bills>();
-		String sql = "SELECT *\r\n"
-				+ "FROM bills\r\n"
-				+ "WHERE MONTH(created_at) = 6 AND YEAR(created_at) = 2021\r\n"
-				+ "ORDER BY created_at ASC, total DESC";
+		String sql = "SELECT b.id AS id, `user`, `phone`, `display_name`, `address`, `total`, `quanty`, `created_at`, `note`, `id_user`, `id_status`\r\n"
+				+ "FROM `bills` AS b \r\n"
+				+ "INNER JOIN \r\n"
+				+ "status AS s \r\n"
+				+ "ON b.id_status = s.id\r\n"
+				+ "WHERE MONTH(created_at) = 6 AND YEAR(created_at) = 2021 AND s.id = 4\r\n"
+				+ "ORDER BY created_at DESC, total DESC ";
 		list = _jdbcTemplate.query(sql, new MapperBills());
 		return list;
 	}
@@ -88,8 +91,11 @@ public class BillsDao extends BaseDao {
 	public double TotalRevenueOfMonth() {
 		StringBuffer sql = new StringBuffer();
 		sql.append("SELECT SUM(total)\r\n"
-				+ "FROM bills\r\n"
-				+ "WHERE month(created_at) = 6 AND year(created_at) = 2021");
+				+ "FROM `bills` AS b \r\n"
+				+ "INNER JOIN \r\n"
+				+ "status AS s \r\n"
+				+ "ON b.id_status = s.id \r\n"
+				+ "WHERE MONTH(created_at) = 6 AND YEAR(created_at) = 2021 AND s.id = 4");
 		double insert = _jdbcTemplate.queryForObject(sql.toString(), new Object[] {}, Double.class);
 		return insert;
 	}

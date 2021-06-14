@@ -123,7 +123,7 @@ Export <i class="fa fa-angle-down"></i>
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Id Hóa đơn</th>
+                                            <th>Ngày tạo hóa đơn</th>
                                             <th>Khách hàng</th>
                                             <th>Tổng tiền</th>
                                         </tr>
@@ -131,7 +131,7 @@ Export <i class="fa fa-angle-down"></i>
                                     <tbody>
                                     	<c:forEach var="item" items="${ listBillsOfMonth }">
 	                                    	<tr>
-	                                            <td>${ item.id }</td>
+	                                            <td>${ item.created_at }</td>
 	                                            <td>${ item.display_name }</td>
 	                                            <td><fmt:formatNumber type="number" groupingUsed="true" value="${ item.total }" />₫</td>
 	                                        </tr>
@@ -266,36 +266,26 @@ Export <i class="fa fa-angle-down"></i>
                 fillOpacity: 0.85,
                 data: [{
                     period: '2020 Q4',
-                    status1: null,
-                    status2: null,
-                    status3: null
+                    status1: null
                 }, {
                     period: '2021 Q1',
-                    status1: null,
-                    status2: null,
-                    status3: null
+                    status1: null
                 }, {
                     period: '2021 Q2',
-                    status1: 2300000,
-                    status2: 2000000,
-                    status3: 300000
+                    status1: 1030000
                 }, {
                     period: '2021 Q3',
-                    status1: 1120000,
-                    status2: 1000000,
-                    status3: 0
+                    status1: ${ totalRevenueOfMonth }
                 }, {
                     period: '2021 Q4',
-                    status1: null,
-                    status2: null,
-                    status3: null
+                    status1: null
                 }],
                 lineColors: ['#ff4a43', '#a2d200', '#22beef'],
                 xkey: 'period',
                 redraw: true,
-                ykeys: ['status1', 'status2', 'status3'],
-                labels: ['Đơn đã thanh toán', 'Đơn chờ xác nhận', 'Đơn bị hủy'],
-                pointSize: 5,
+                ykeys: ['status1'],
+                labels: ['Doanh Thu Trong Quý'],
+                pointSize: 2,
                 hideHover: 'auto',
                 resize: true
             });

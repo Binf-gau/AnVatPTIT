@@ -32,7 +32,7 @@ public class AdminController_Admin extends BaseController_Admin {
 		if (count > 0) {
 			_mvShare.addObject("messageResponse", "Thêm quản lý thành công");
 		} else {
-			_mvShare.addObject("messageResponse", "Thêm quản lý không thành công");
+			_mvShare.addObject("messageResponse", "Thêm quản lý không thành công (Email hoặc CMND/CCCD đã tồn tại)");
 		}
 		_mvShare.setViewName("admin/account/register");
 		return _mvShare;

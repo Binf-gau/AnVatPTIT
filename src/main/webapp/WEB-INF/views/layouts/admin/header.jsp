@@ -67,7 +67,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown head-dpdn">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">3</span></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">1</span></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="notification_header">
@@ -75,31 +75,11 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="don-hang">
                                                 <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
                                                 <div class="notification_desc">
                                                     <p>Có 1 đơn hàng mới</p>
                                                     <p><span>58 phút trước</span></p>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-                                        <li class="odd">
-                                            <a href="#">
-                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
-                                                <div class="notification_desc">
-                                                    <p>Có 1 đơn hàng mới</p>
-                                                    <p><span>1 giờ trước</span></p>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="user_img"><img src="<c:url value="/assets/user/img/avata/avt.jpg"/>" alt=""></div>
-                                                <div class="notification_desc">
-                                                    <p>Có 1 đơn hàng mới</p>
-                                                    <p><span>10 giờ trước</span></p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </a>
@@ -112,60 +92,60 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown head-dpdn">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">9</span></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">1</span></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="notification_header">
-                                                <h3>Bạn có 9 việc cần làm</h3>
+                                                <h3>Tiến trình đơn hàng</h3>
                                             </div>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <div class="task-info">
-                                                    <span class="task-desc">Database update</span><span class="percentage">40%</span>
+                                                    <span class="task-desc">Đơn hàng đang giao</span><span class="percentage">10%</span>
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="progress progress-striped active">
-                                                    <div class="bar yellow" style="width:40%;"></div>
+                                                    <div class="bar yellow" style="width:10%;"></div>
                                                 </div>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <div class="task-info">
-                                                    <span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
+                                                    <span class="task-desc">Đơn hàng đã thanh toán</span><span class="percentage">20%</span>
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="progress progress-striped active">
-                                                    <div class="bar green" style="width:90%;"></div>
+                                                    <div class="bar green" style="width:20%;"></div>
                                                 </div>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <div class="task-info">
-                                                    <span class="task-desc">Mobile App</span><span class="percentage">33%</span>
+                                                    <span class="task-desc">Đơn hàng bị hủy</span><span class="percentage">0%</span>
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="progress progress-striped active">
-                                                    <div class="bar red" style="width: 33%;"></div>
+                                                    <div class="bar red" style="width: 0%;"></div>
                                                 </div>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <div class="task-info">
-                                                    <span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
+                                                    <span class="task-desc">Đơn hàng chờ xác nhận</span><span class="percentage">70%</span>
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="progress progress-striped active">
-                                                    <div class="bar  blue" style="width: 80%;"></div>
+                                                    <div class="bar  blue" style="width: 70%;"></div>
                                                 </div>
                                             </a>
                                         </li>
                                         <li>
                                             <div class="notification_bottom">
-                                                <a href="#">Xem tất cả danh sách cần làm</a>
+                                                <a href="#">Xem tất cả tiến trình</a>
                                             </div>
                                         </li>
                                     </ul>

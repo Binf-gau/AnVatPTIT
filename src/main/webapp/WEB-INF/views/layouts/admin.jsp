@@ -30,6 +30,8 @@
 	<link href="<c:url value="/assets/admin/css/font-awesome.css" />" rel="stylesheet"> 
 	<!-- jQuery -->
 	<script src="<c:url value="/assets/admin/js/jquery-2.1.4.min.js"/>" > </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
 	<!-- //jQuery -->
 	<!-- calendar -->
 	<link rel="stylesheet" href="<c:url value="/assets/admin/css/monthly.css" />">
@@ -110,7 +112,7 @@
 				<%@include file="/WEB-INF/views/layouts/admin/header.jsp" %>
 				<decorator:body/>
 	            <div class="copyrights">
-	                <p>© 2021 Pooled. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+	                <p>© 2021 Ăn Vặt PTIT | <a href="http://w3layouts.com/" target="_blank">97 Man Thiện, Hiệp Phú, Quận 9, Thành phố Hồ Chí Minh</a> </p>
 	            </div>
 			</div>
 		</div>

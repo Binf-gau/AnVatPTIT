@@ -24,31 +24,31 @@
                             <div class="form-group">
                                 <label for="focusedinput" class="col-sm-2 control-label">Tên sản phẩm</label>
                                 <div class="col-sm-8">
-                                    <form:input type="text" class="form-control1" id="focusedinput" placeholder="Nhập tên sản phẩm" path="name" />
+                                    <form:input type="text" class="form-control1" id="focusedinput" placeholder="Nhập tên sản phẩm" path="name" required="true" pattern="\S+.*" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="disabledinput" class="col-sm-2 control-label">Mô tả</label>
                                 <div class="col-sm-8">
-                                    <form:input type="text" class="form-control1" id="disabledinput" placeholder="Nhập mô tả" path="title" />
+                                    <form:input type="text" class="form-control1" id="disabledinput" placeholder="Nhập mô tả" path="title" required="true" pattern="\S+.*" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="txtarea1" class="col-sm-2 control-label">Chi tiết</label>
                                 <div class="col-sm-8">
-                                    <form:textarea rows="9" cols="50" class="form-control1" path="details" />
+                                    <form:textarea rows="9" cols="50" class="form-control1" path="details" required="true" pattern="\S+.*" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword" class="col-sm-2 control-label">Giá bán</label>
                                 <div class="col-sm-8">
-                                    <form:input type="number" min="0" value="100000" class="form-control1" id="inputPassword" placeholder="Nhập giá bán" path="price" />
+                                    <form:input type="number" min="0" class="form-control1" id="inputPassword" placeholder="Nhập giá bán" required="true" pattern="^[0-9]{9}" path="price" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword" class="col-sm-2 control-label">Giảm giá bao nhiêu %</label>
                                 <div class="col-sm-8">
-                                    <form:input type="number" min="0" max="100" value="0" class="form-control1" id="inputPassword" placeholder="0" path="sale" />
+                                    <form:input type="number" min="0" max="100" class="form-control1" id="inputPassword" placeholder="0" path="sale" required="true" pattern="^[0-9]{2}" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -70,21 +70,19 @@
                             <div class="form-group">
                                 <label for="inputPassword" class="col-sm-2 control-label">Ngày tạo</label>
                                 <div class="col-sm-8">
-                                    <form:input type="Date" class="form-control1" ng-model="model.date" required="" path="created_at" />
+                                    <form:input type="Date" class="form-control1" ng-model="model.date" required="true" path="created_at" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile" class="col-sm-2 control-label">Tải ảnh lên đây</label>
                                 <div class="col-sm-8">
-                                    <form:input type="file" id="exampleInputFile" path="img" />
+                                    <form:input type="file" id="exampleInputFile" path="img" required="true"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                         <button type="submit" class="btn-primary btn">Sửa sản phẩm</button>
-                                        <button type="submit" class="btn-default btn">Cancel</button>
-                                        <button type="submit" class="btn-inverse btn">Reset</button>
                                     </div>
                                 </div>
                             </div>

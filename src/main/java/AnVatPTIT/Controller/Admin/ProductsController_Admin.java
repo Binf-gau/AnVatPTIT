@@ -92,6 +92,7 @@ public class ProductsController_Admin extends BaseController_Admin {
 	@RequestMapping(value = "/admin/them-san-pham", method = RequestMethod.GET)
 	public ModelAndView ThemSanPham() {
 		_mvShare.addObject("categorys", _homeService.GetDataCategorys());
+		_mvShare.addObject("messageResponse", "");
 		_mvShare.addObject("product", new ProductsDto());
 		_mvShare.setViewName("admin/products/add_product");
 		return _mvShare;
@@ -102,9 +103,9 @@ public class ProductsController_Admin extends BaseController_Admin {
 		int count1 = productService.AddProduct(product);
 		int count2 = productService.AddImage(product);
 		if (count1 > 0 && count2 > 0) {
-			_mvShare.addObject("status", "Thêm thành công");
+			_mvShare.addObject("messageResponse", "Thêm sản phẩm thành công");
 		} else {
-			_mvShare.addObject("status", "Thêm không thành công");
+			_mvShare.addObject("messageResponse", "Thêm sản phẩm không thành công");
 		}
 		_mvShare.setViewName("admin/products/add_product");
 		return _mvShare;

@@ -8,7 +8,7 @@
     </ol>
     
     <c:if test="${ not empty messageResponse}">
-	    <div class="col-md-4 compose w3layouts">
+	    <div class="col-md-12 compose w3layouts">
 	            <h2>${messageResponse}</h2>
 		</div>
 	</c:if>
@@ -23,25 +23,25 @@
          	<div class="vali-form">
 	            <div class="col-md-6 form-group1">
 	              <label class="control-label">Họ và tên đệm</label>
-	              <form:input type="text" placeholder="Nhập họ và tên đệm" path="first_name" required="" />
+	              <form:input type="text" placeholder="Nhập họ và tên đệm" path="first_name" required="true" pattern="\S+.*" />
 	            </div>
 	            <div class="col-md-6 form-group1 form-last">
 	              <label class="control-label">Tên</label>
-	              <form:input type="text" placeholder="Nhập tên" path="last_name" required="" />
+	              <form:input type="text" placeholder="Nhập tên" path="last_name" required="true" pattern="\S+" />
 	            </div>
 	            <div class="clearfix"> </div>
             </div>
             
             <div class="col-md-12 form-group1 group-mail">
 	              <label class="control-label">Email</label>
-	              <form:input type="text" placeholder="Nhập email" path="email" required="" />
+	              <form:input type="text" placeholder="Nhập email"  path="email" required="true" pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" />
             </div>
              <div class="clearfix"> </div>
             
             <div class="vali-form vali-form1">
 	            <div class="col-md-6 form-group1">
 	              <label class="control-label">Mật khẩu</label>
-	              <form:input type="password" placeholder="Nhập mật khẩu" path="password" required="" />
+	              <form:input type="password" placeholder="Nhập mật khẩu" path="password" required="true" />
 	            </div>
 	            <div class="clearfix"> </div>
             </div>
@@ -49,23 +49,23 @@
             <div class="vali-form">
 	            <div class="col-md-6 form-group1">
 	              <label class="control-label">Số điện thoại</label>
-	              <form:input type="text" placeholder="Nhập số điện thoại" path="phone_number" required="" />
+	              <form:input type="text" placeholder="Nhập số điện thoại (10 số)" path="phone_number" required="true" pattern="^(0[2349][0-9]{8}|1[89]00[0-9]{4})$" />
 	            </div>
 	            <div class="col-md-6 form-group1 group-mail">
-	              <label class="control-label">CMND/CCCD</label>
-	              <form:input type="text" placeholder="Nhập số CMND/CCCD" path="cmnd" required="" />
+	              <label class="control-label">CMND/CCCD </label>
+	              <form:input type="text" placeholder="Nhập số CMND/CCCD (CMND: 9 số | CCCD: 12 số)" path="cmnd" required="true" pattern="^[0-9]{9}"  />
 	            </div>
 	            <div class="clearfix"> </div>
             </div>
             
            	<div class="col-md-12 form-group1 ">
               <label class="control-label">Địa chỉ</label>
-              <form:textarea placeholder="Nhập địa chỉ" required="" style="margin: 7.1875px 0px 0px; width: 1088px; height: 119px;" path="address" />
+              <form:textarea placeholder="Nhập địa chỉ" required="true" style="margin: 7.1875px 0px 0px; width: 1088px; height: 119px;" path="address" />
             </div>
            
             <div class="col-md-6 form-group1 group-mail">
               <label class="control-label ">Ngày sinh</label>
-              <form:input type="Date" class="form-control1 ng-invalid ng-invalid-required" ng-model="model.date" required="" path="birthday" />
+              <form:input type="Date" class="form-control1 ng-invalid ng-invalid-required" ng-model="model.date" required="true" path="birthday" min="1950-01-01" max="2021-06-09"/>
             </div>
             <div class="clearfix"> </div>
           

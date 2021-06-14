@@ -21,7 +21,7 @@
                         	<div class="form-group">
                                 <label for="focusedinput" class="col-sm-2 control-label">Tên loại sản phẩm</label>
                                 <div class="col-sm-8">
-                                    <form:input type="text" class="form-control1" id="focusedinput" placeholder="Nhập tên loại sản phẩm" path="name" />
+                                    <form:input type="text" class="form-control1" id="focusedinput" placeholder="Nhập tên loại sản phẩm" required="true" pattern="\S+.*" path="name" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                         <button type="submit" class="btn-primary btn">Thêm loại sản phẩm</button>
-                                        <button type="reset" class="btn-inverse btn">Reset</button>
+                                        <button type="reset" class="btn-inverse btn">Làm mới</button>
                                     </div>
                                 </div>
                             </div>
